@@ -1,11 +1,11 @@
-
-#!/usr/bin/env ruby
+# !/usr/bin/env ruby
 require_relative '../lib/linternator.rb'
-
-# folder = "tests"
-# foldder ||= ARGV 
-lint = Linternator.new("tests")
-p linterator.files
+folder = ARGV
+folder ||= 'second'
+# folder ||= ARGV
+p folder[-1]
+lint = Linternator.new(folder[-1])
+p lint.files
 # p first_file
 # e =  File.open("hello.txt")
 # p e.read
@@ -18,4 +18,4 @@ p linterator.files
 # lint = Linternator.new("tests")
 # tests = "tests"
 # a = Dir["#{tests}/**/*.rb"]
-# # p 
+# # p

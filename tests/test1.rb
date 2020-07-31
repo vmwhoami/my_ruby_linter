@@ -1,3 +1,3 @@
-def function(a,b)
-    "a great day today #{a} "
+def function(a, _b)
+  "a great day today #{a} "
 end

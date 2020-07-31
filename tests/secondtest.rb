@@ -1,3 +1,3 @@
-def a_test_function(a,b)
-    a*b
+def a_test_function(a, b)
+  a * b
 end
