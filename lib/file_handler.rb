@@ -1,10 +1,13 @@
 class File_handler
-    def initialize(folder)
-      @folder  =  Dir["#{folder}/**/*.rb"]
+    def initialize(folder="tests")
+      @folders  =  Dir["#{folder}/**/*.rb"]
+      @files = self.folder_query
     end
-
+    
     def folder_query
-      
+      @folders.map do |el|
+        File.readlines(el)
+      end
     end
 end
 
@@ -17,4 +20,5 @@ end
 # files = File_handler.new("anew")
 # tests = "tests"
 # a = Dir["#{tests}/**/*.rb"]
+#files.folder_query
 # p a
