@@ -4,7 +4,7 @@
 # 2.Read the file 
 # 3.Go through each line 
 # 4. Check for erorrs going
-  #4.1 What errors to look for 4.1.1 line spacing
+  #4.1 What errors to look for 4.1.1 
                                4.1.2 indentation
                                4.1.3 Bad naming conventions
-                               4.1.4 Bad Indentations
+                               4.1.4 line spacing

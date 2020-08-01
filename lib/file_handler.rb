@@ -1,14 +1,25 @@
 class FileHandler
   def initialize(folder = 'tests')
     @folders = Dir["#{folder}/**/*.rb"]
-    @files = folder_query
+    self.epty_folder?
   end
 
   def folder_query
-    @folders.map do |el|
-      File.readlines(el)
+    h = Hash.new
+    @folders.each do |el|
+     h[el] = File.readlines(el)
     end
+    h
   end
+
+  def error?
+    @folders.empty?
+  end
+   
+  def epty_folder?
+  puts "The test folder is empty or it doesn't contain a .rb file"  if self.error?
+  end
+
 end
 
 # WHAT THIS CLASS WILL DO
@@ -16,7 +27,7 @@ end
 # 2 Parse the file read though each line
 
 # load "./lib/file_handler.rb"
-# files = File_handler.new("anew")
+# files = FileHandler.new("anew")
 # tests = "tests"
 # a = Dir["#{tests}/**/*.rb"]
 # files.folder_query
