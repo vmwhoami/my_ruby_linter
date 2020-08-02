@@ -49,12 +49,15 @@ def closing_brackets(ar)
   opening = ["(","{","["]
   closing = ["]","}",")"]
   h = Hash.new(0)
+  h2 = Hash.new(0)
   ar.each do |el|
  h[el] +=1 if opening.include?(el)
+ h2[el] +=1 if closing.include?(el)
   end
-  h
+  h2.values == h.values
 end
-
-arr = ["(","[","{","]"]
+# pop && shift should be equal? "()" "[]" "{}"
+# how to specify what is missing?
+arr = ["(","[","{",")","]","}"]
 
 p closing_brackets(arr)
