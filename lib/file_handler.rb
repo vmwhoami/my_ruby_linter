@@ -8,7 +8,7 @@ class FileHandler
   def folder_query
     h = {}
     @folders.each do |el|
-      h[el] = File.readlines(el)
+      h[el] = File.readlines(el, chomp: true)
     end
     h
   end
