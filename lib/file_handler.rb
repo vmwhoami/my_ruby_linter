@@ -11,7 +11,7 @@ def first_file
 
 end
   def file_query
-    first = @folders.shift
+    first = @folders.pop
     h = File.readlines(first, chomp: true) 
     {first => h}
   end
@@ -28,8 +28,8 @@ end
 
 
 # load "./lib/file_handler.rb"
-# files = FileHandler.new
-# p files.file_query
+files = FileHandler.new
+p files.file_query
 # 9 files inspected, 5 offenses detected
 
 
