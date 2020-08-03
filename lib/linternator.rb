@@ -21,16 +21,13 @@ class Linternator
 
 
   def correct_braces?(str)
-    arr = []
-    braces = {"{"=>"}","("=>")","["=>"]"}
+    array = []
+    braces = { '{' => '}', '[' => ']', '(' => ')' }
     str.each_char do |char|
-     return false if arr.empty? && braces.values.include?(char)
-     arr << char if braces.keys.include?(char)
-     if braces[char] == char
-      arr.pop
-     end
+      array << char if braces.key?(char)
+      return false if braces.key(char) && braces.key(char) != array.pop
     end
-   arr
+    array.empty?
   end
 
 end
@@ -41,5 +38,5 @@ end
 # load "./lib/linternator.rb"
 
 linter = Linternator.new('tests')
-p linter.correct_braces?("def (a))")
+p linter.correct_braces?("def ((a)")
 
