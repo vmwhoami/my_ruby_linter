@@ -61,3 +61,32 @@ end
 arr = ["(","[","{",")","]","}"]
 
 p closing_brackets(arr)
+
+def closing_order(arr)
+  ar = []
+  braces = ["(","[","{",")","]","}"]
+  closing = [ "()", "[]" ,"{}"]
+  arr.each_with_index do |el,indx|
+    el.each_char{|el| ar << el if braces.include?(el)} 
+  end 
+  ar
+end
+
+dkadl = ["\n", "def tests(a)\n", "    puts \"Hello \#{[a]}\"\n", "end"]
+
+p closing_order(dkadl)
+# https://stackoverflow.com/questions/20747294/how-to-check-validity-of-closed-brackets-parentheses-or-brackets-in-ruby
+# def valid_string?(str)
+#   stack = []
+#   symbols = { '{' => '}', '[' => ']', '(' => ')' }
+#   str.each_char do |c|
+#     stack << c if symbols.key?(c)
+#     return false if symbols.key(c) && symbols.key(c) != stack.pop
+#   end
+#   stack.empty?
+# end
+
+# puts valid_string?('[ ]')                  # returns true
+# puts valid_string?('[  ')                  # returns false
+# puts valid_string?('[ ( text ) {} ]')      # returns true
+# puts valid_string?('[ ( text { ) } ]')     # returns false
