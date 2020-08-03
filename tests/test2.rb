@@ -1,4 +1,3 @@
-
 def tests(a)
-    puts "Hello #{a}"
+    puts "Hello #{a))"
 end
