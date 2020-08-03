@@ -21,10 +21,8 @@ class Linternator
     @code_lines.each_with_index do |line,indx| 
        if self.incorect_braces?(line)
         upadate_errors(@file_name.blue +  ": on Line #{indx+1} ".yellow + message.red)
-      end
-      
+      end  
     end
-
   end
 
 
@@ -38,6 +36,10 @@ class Linternator
       return true if braces.key(char) && braces.key(char) != array.pop
     end
     !array.empty?
+  end
+
+
+  def incorect_end?(arr)
   end
 
 end
