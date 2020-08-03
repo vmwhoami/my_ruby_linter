@@ -1,16 +1,19 @@
 require_relative 'term_rainbou.rb'
+
 class FileHandler
+  attr_reader :file_count, :folders, :files
   def initialize(folder = 'tests')
     @folders = Dir["#{folder}/**/*.rb"]
+    @file_count = @folders.size
     epty_folder?
   end
+def first_file
 
-  def folder_query
-    h = {}
-    @folders.each do |el|
-      h[el] = File.readlines(el, chomp: true)
-    end
-    h
+end
+  def file_query
+    first = @folders.shift
+    h = File.readlines(first, chomp: true) 
+    {first => h}
   end
 
   def error?
@@ -22,13 +25,12 @@ class FileHandler
   end
 end
 
-# WHAT THIS CLASS WILL DO
-# 1 Find the file it is given
-# 2 Parse the file read though each line
+
 
 # load "./lib/file_handler.rb"
-# files = FileHandler.new("anew")
-# tests = "tests"
-# a = Dir["#{tests}/**/*.rb"]
-# files.folder_query
-# p a
+# files = FileHandler.new
+# p files.file_query
+# 9 files inspected, 5 offenses detected
+
+
+
