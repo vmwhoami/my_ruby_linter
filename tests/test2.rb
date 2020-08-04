@@ -1,5 +1,4 @@
-
-def hello(a)
-    puts "hello there #{a}] how do you do" 
+def tests(a)
+    puts "Hello #{a)}"
 end
 end

@@ -12,8 +12,8 @@
 [![GitHub2 Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/vmwhoami/my_ruby_linter/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-[![Made By](https://img.shields.io/badge/Made%20By-Witah%20Georjane-red)](https://github.com/vmwhoami)
-[![Twitter Follow](https://img.shields.io/twitter/follow/WittyJany?label=Follow%20Witah%20Georjane%20on%20Twitter&style=social)](https://twitter.com/vmwhoami)
+[![Made By](https://img.shields.io/badge/made-VITALIE--MELNIC-red)](https://github.com/vmwhoami)
+[![Twitter Follow](https://img.shields.io/twitter/follow/vmwhoami?label=follow%20vmwhoami%20on%20twitter&style=social)](https://twitter.com/vmwhoami)
 
 </div>
 <p align="center">
