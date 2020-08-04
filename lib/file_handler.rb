@@ -1,9 +1,10 @@
 require_relative 'term_rainbou.rb'
 
 class FileHandler
-  attr_reader :file_count, :folders, :files
+  attr_reader :file_count, :folders, :files, :initial_count
   def initialize(folder = 'tests')
     @folders = Dir["#{folder}/**/*.rb"]
+    @initial_count = @folders.size
     @file_count = @folders.size
     epty_folder?
   end

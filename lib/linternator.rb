@@ -77,12 +77,15 @@ end
   end
 
   def errors_spitter
+   puts "#{ @folders.initial_count} files read #{@allerrors.size} errors found".green if @allerrors.empty?
     @allerrors.each do |el|
+      puts
       puts el
+      puts
     end
-  
-  end
+    puts "#{ @folders.initial_count} files read #{@allerrors.size} errors found".red if !@allerrors.empty?
 
+  end
 
 end
 

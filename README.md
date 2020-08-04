@@ -84,12 +84,7 @@ or you simply install the the following directly using
 $ gem install rspec 
 ```
 
-# Style Guide <a name = "styleguide"></a>
-## 1. Department Naming
-
-
-
-
+# Testing for <a name = "styleguide"></a>
 
 #### - Linterator/incorect_end_handler
 This method  makes sure that all methods use closing end tags 
