@@ -1,3 +1,4 @@
-def tests(a)
+def testsa)
     puts "Hello #{a))"
+end
 end
