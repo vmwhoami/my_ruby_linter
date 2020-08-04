@@ -18,5 +18,4 @@ class String
   def blue
     colorize(34)
   end
-
-  end
+end

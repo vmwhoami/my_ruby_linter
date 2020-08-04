@@ -8,14 +8,14 @@ class FileHandler
     @file_count = @folders.size
     epty_folder?
   end
-def first_file
 
-end
+  def first_file; end
+
   def file_query
     first = @folders.shift
-    h = File.readlines(first, chomp: true) 
+    h = File.readlines(first, chomp: true)
     @file_count -= 1
-    {first => h}
+    { first => h }
   end
 
   def error?
@@ -27,12 +27,7 @@ end
   end
 end
 
-
-
 # load "./lib/file_handler.rb"
 # files = FileHandler.new
 # p files.file_count
 # 9 files inspected, 5 offenses detected
-
-
-
