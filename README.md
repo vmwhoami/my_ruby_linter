@@ -91,7 +91,7 @@ $ gem install rspec
 
 
 
-#### - 
+#### - Linterator/incorect_end_handler
 This method  makes sure that all methods use closing end tags 
 
 
@@ -107,19 +107,18 @@ def my_method_name
 end
 ```
 
-#### - Naming/ClassAndModuleCamelCase
+#### - Linterator/incorect_braces?
 This cop checks for class and module names with an underscore in them.
 ```
 # bad
-class My_Class
-end
-module My_Module
+def my_func(name)
+  puts "Hello #{name"
 end
 
+
 # good
-class MyClass
-end
-module MyModule
+def my_func(name)
+  puts "Hello #{name}"
 end
 ```
 
