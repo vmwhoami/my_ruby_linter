@@ -21,8 +21,8 @@ def all_files
      @file = @folders.file_query
      @file_name = @file.keys.flatten.join
      @code_lines =  @file.values.flatten
-     self.braces_handler
      self.incorect_end_handler
+     self.braces_handler
   end
   
 
@@ -71,9 +71,9 @@ end
       end_count += 1 
   end
     end
-    status = keyword_count <=> end_count
-    upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_b.red)if status.eql?(1)
-    upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_a.red ) if status.eql?(-1)
+    ends_meet = keyword_count <=> end_count
+    upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_b.red)if ends_meet.eql?(1)
+    upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_a.red ) if ends_meet.eql?(-1)
   end
 
   def errors_spitter

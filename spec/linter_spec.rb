@@ -26,4 +26,11 @@ describe Linternator do
             expect( linter.incorect_braces?(good_braces)).to eql(false)
         end
       end
+
+      describe '#incorect_end_handler' do
+        let(:lint){Linternator.new('second')}
+
+
+        
+      end
 end
