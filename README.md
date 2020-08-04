@@ -59,12 +59,17 @@ Clone this repository on the command promp or console using
 git clone https://github.com/vmwhoami/my_ruby_linter
 ```
 ```
-cd Ruby-Linters
+cd my_ruby_linter
 ```
 
-Type in the following command to run the linter on a test file
+Type in the following command to run the linter on a test file by default it is the folder tests. 
 ```
 ruby bin/main.rb
+
+You can change the testing folder by typing testing folder afer ruby bin/main.rb
+```
+ruby bin/main.rb my_folder
+```
 ```
 ### Testing
 Test class methods using RSpec by running the command in the root directory 

@@ -94,8 +94,8 @@ end
 
 # load "./lib/linternator.rb"
 
-# linter = Linternator.new('tests')
+linter = Linternator.new('second')
 # # puts linter.braces_handler
 # # puts linter.incorect_end_handler
 
-# p linter.allerrors
+p linter.allerrors

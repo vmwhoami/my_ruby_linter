@@ -30,7 +30,12 @@ describe Linternator do
       describe '#incorect_end_handler' do
         let(:lint){Linternator.new('second')}
 
-
-        
+        it "should point the line and the" do
+            expect( lint.allerrors).to eql(
+                ["\e[34msecond/just_a_test.rb\e[0m\e[33m: Line 4 \e[0m\e[31mExtra end detected\e[0m",
+                "\e[34msecond/just_a_test.rb\e[0m\e[33m: on Line 1 \e[0m\e[31mmissing closing brackets\e[0m",
+                 "\e[34msecond/just_a_test.rb\e[0m\e[33m: on Line 2 \e[0m\e[31mmissing closing brackets\e[0m"]
+            )
+        end
       end
 end
