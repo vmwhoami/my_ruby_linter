@@ -1,16 +1,32 @@
 require_relative 'term_rainbou.rb'
 require_relative 'file_handler.rb'
 class Linternator
-  attr_reader :file , :file_name , :code_lines, :allerrors
+  attr_reader :file , :file_name , :code_lines, :allerrors, :file_count
   def initialize(folder)
     @folders = FileHandler.new(folder)
-    @file = @folders.file_query
-    @file_name = @file.keys.flatten.join
-    @code_lines =  @file.values.flatten
+    # @file = @folders.file_query
+    # @file_name = @file.keys.flatten.join
+    # @code_lines =  @file.values.flatten
+    @file_count = @folders.file_count
 		@keywords = %w[def if unless until class case begin]
-		@allerrors = []
+    @allerrors = []
+    self.all_files
+    # self.braces_handler
+    # self.incorect_end_handler
+    # self.all_files
   end
 
+def all_files
+  until   @folders.file_count == 0 do
+     @file = @folders.file_query
+     @file_name = @file.keys.flatten.join
+     @code_lines =  @file.values.flatten
+     self.braces_handler
+     self.incorect_end_handler
+  end
+  
+
+end
 
 	def upadate_errors(error)
     @allerrors<<error
@@ -24,8 +40,6 @@ class Linternator
        end  
     end
   end
-
-
 
 
   def incorect_braces?(str)
@@ -62,8 +76,12 @@ class Linternator
     upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_a.red ) if status.eql?(-1)
   end
 
-
-
+  def errors_spitter
+    @allerrors.each do |el|
+      puts el
+    end
+  
+  end
 
 
 end
@@ -73,10 +91,8 @@ end
 
 # load "./lib/linternator.rb"
 
-linter = Linternator.new('tests')
-p linter.braces_handler
-p linter.incorect_end_handler
+# linter = Linternator.new('tests')
+# # puts linter.braces_handler
+# # puts linter.incorect_end_handler
 
-linter.allerrors.each do |el|
-  puts el
-end
+# p linter.allerrors

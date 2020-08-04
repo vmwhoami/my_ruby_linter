@@ -35,7 +35,7 @@
 
 ## 🧐 About <a name = "about"></a>
 <h3 align="center">
-This is a code linter like Rubocop that trawls through your code files and finds problems, such as methods with too many lines, code style violations, or common gotchas.</h3>
+This is a code linter like Rubocop that trawls through your code files and finds problems, such as unclosed braces,unclosed end.</h3>
 
 ---
 
@@ -88,30 +88,18 @@ $ gem install rspec
 ## 1. Department Naming
 
 
-<p>Naming cops check for naming issue of your code, such as method name, constant name, file name, etc.</p>
-
-#### - Naming/VariableName
-This cop makes sure that all variables use the configured style, snake_case for their names.
 
 
-```
-# bad
-myVar = 5
 
-# good
-my_var = 5
-```
-
-
-#### - Naming/MethodName
-This cop makes sure that all methods use the configured style, snake_case for their names.
+#### - 
+This method  makes sure that all methods use closing end tags 
 
 
 ```
 # bad
 def MyMethodName
-  # code
-end
+  code
+
 
 # good
 def my_method_name
@@ -135,31 +123,6 @@ module MyModule
 end
 ```
 
-## 2. Department Metrics
-
-<p>Metrics cops deal with properties of the source code that can be measured, such as class length, method length, etc. Generally speaking, they have a configuration parameter called <b>Max</b> and when running rubocop <i>--auto-gen-config</i>, this parameter will be set to the highest value found for the inspected code. In this linter, Max value has being set to 10.</p>
-
-#### - Metrics/BlockLength
-This cop checks if the length of a block exceeds some maximum value. Comment lines can optionally be ignored.
-
-## 3. Department Layout
-
-<p>Layout cops inspect your code for consistent use of indentation, alignment, and white space.</p>
-
-#### - Layout/EmptyLines
-This cop checks for two or more consecutive blank lines.
-```
-# bad - It has two empty lines.
-my_method
-
-
-my_method
-
-# good
-my_method
-
-my_method
-```
 
 ## ✒️  Author <a name = "author"></a>
 
