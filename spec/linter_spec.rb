@@ -31,11 +31,12 @@ describe Linternator do
     let(:lint) { Linternator.new('spec') }
 
     it 'should point the line and the errors' do
-      expect(lint.allerrors.include?("\e[34mspec/mock-test/just_a_test.rb\e[0m\e[33m: on Line 1 \e[0m\e[31mmissing closing brackets\e[0m")).to eql(true)
+      expect(lint.allerrors.include?(
+               "\e[34mspec/mock-test/just_a_test.rb\e[0m\e[33m: on Line 1 \e[0m\e[31mmissing closing brackets\e[0m"
+             )).to eql(true)
     end
   end
 end
 
 describe FileHandler do
 end
-
