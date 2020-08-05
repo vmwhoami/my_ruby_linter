@@ -2,7 +2,7 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
-    - './tests/*.rb'
+    - './assets/tests/*.rb'
     - './spec/mock-test/*.rb'
 
   DisplayCopNames: true

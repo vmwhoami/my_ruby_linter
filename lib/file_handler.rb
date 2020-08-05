@@ -2,14 +2,12 @@ require_relative 'term_rainbou.rb'
 
 class FileHandler
   attr_reader :file_count, :initial_count
-  def initialize(folder = 'tests')
+  def initialize(folder = './assets/tests')
     @folders = Dir["#{folder}/**/*.rb"]
     @initial_count = @folders.size
     @file_count = @folders.size
     epty_folder?
   end
-
-  def first_file; end
 
   def file_query
     first = @folders.shift
@@ -17,6 +15,8 @@ class FileHandler
     @file_count -= 1
     { first => h }
   end
+
+  private
 
   def error?
     @folders.empty?

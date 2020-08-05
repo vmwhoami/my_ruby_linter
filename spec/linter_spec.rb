@@ -28,17 +28,14 @@ describe Linternator do
   end
 
   describe '#incorrect_end_handler' do
-    let(:lint) { Linternator.new('second') }
+    let(:lint) { Linternator.new('spec') }
 
-    it 'should point the line and the' do
-      expect(lint.allerrors).to eql(
-        ["\e[34msecond/just_a_test.rb\e[0m\e[33m: Line 4 \e[0m\e[31mExtra end detected\e[0m",
-         "\e[34msecond/just_a_test.rb\e[0m\e[33m: on Line 1 \e[0m\e[31mmissing closing brackets\e[0m",
-         "\e[34msecond/just_a_test.rb\e[0m\e[33m: on Line 2 \e[0m\e[31mmissing closing brackets\e[0m"]
-      )
+    it 'should point the line and the errors' do
+      expect(lint.allerrors.include?("\e[34mspec/mock-test/just_a_test.rb\e[0m\e[33m: on Line 1 \e[0m\e[31mmissing closing brackets\e[0m")).to eql(true)
     end
   end
 end
 
 describe FileHandler do
 end
+
