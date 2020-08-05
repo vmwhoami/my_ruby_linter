@@ -1,7 +1,7 @@
 require_relative 'term_rainbou.rb'
 require_relative 'file_handler.rb'
 class Linternator
-  attr_reader :file, :file_name, :code_lines, :allerrors, :file_count
+  attr_reader :allerrors
   def initialize(folder)
     @folders = FileHandler.new(folder)
     @file_count = @folders.file_count
@@ -73,5 +73,3 @@ class Linternator
     puts "#{@folders.initial_count} files read #{@allerrors.size} errors found".red unless @allerrors.empty?
   end
 end
-
-

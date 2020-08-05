@@ -3,7 +3,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - './tests/*.rb'
-    - './second/*.rb'
+    - './spec/mock-test/*.rb'
 
   DisplayCopNames: true
 

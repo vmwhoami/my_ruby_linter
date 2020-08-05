@@ -16,18 +16,18 @@ describe Linternator do
     end
   end
 
-  describe '#incorect_braces?' do
+  describe '#incorrect_braces?' do
     bad_braces = '()()[[][][{]}'
     good_braces = '()({[]})'
     it "should check the braces not being closed and return true if they're not" do
-      expect(linter.incorect_braces?(bad_braces)).to eql(true)
+      expect(linter.incorrect_braces?(bad_braces)).to eql(true)
     end
     it 'should ' do
-      expect(linter.incorect_braces?(good_braces)).to eql(false)
+      expect(linter.incorrect_braces?(good_braces)).to eql(false)
     end
   end
 
-  describe '#incorect_end_handler' do
+  describe '#incorrect_end_handler' do
     let(:lint) { Linternator.new('second') }
 
     it 'should point the line and the' do
@@ -41,5 +41,4 @@ describe Linternator do
 end
 
 describe FileHandler do
-  
 end

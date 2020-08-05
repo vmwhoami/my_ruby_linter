@@ -1,7 +1,7 @@
 require_relative 'term_rainbou.rb'
 
 class FileHandler
-  attr_reader :file_count, :folders, :files, :initial_count
+  attr_reader :file_count, :initial_count
   def initialize(folder = 'tests')
     @folders = Dir["#{folder}/**/*.rb"]
     @initial_count = @folders.size
@@ -26,4 +26,3 @@ class FileHandler
     puts "There is no test folder or it doesn't contain a '.rb' file extention".red if error?
   end
 end
-
