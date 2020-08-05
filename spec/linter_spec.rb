@@ -48,7 +48,7 @@ describe FileHandler do
 
     it "Should return the first file in the folder and it's location" do
       hash = file.file_query
-      expect(hash.keys.join).to eql('spec/linter_spec.rb')
+      expect(hash.keys.join).to eql('spec/mock-test/just_a_test.rb')
     end
   end
 end

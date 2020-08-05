@@ -17,7 +17,7 @@
 
 </div>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/vmwhoami/my_ruby_linter/working-branch/img/linterator.jpg" alt="RuboCop Logo"/>
+  <img src="https://raw.githubusercontent.com/vmwhoami/my_ruby_linter/working-branch/assets/img/Linternator.png" alt="Linternator"/>
 </p>
 
 
