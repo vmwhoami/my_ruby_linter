@@ -39,4 +39,16 @@ describe Linternator do
 end
 
 describe FileHandler do
+  let(:file) { FileHandler.new('spec') }
+  describe '#file_query' do
+    it 'Should reduce the file count each time it is called' do
+      file.file_query
+      expect(file.file_count).to eql(2)
+    end
+
+    it "Should return the first file in the folder and it's location" do
+      hash = file.file_query
+      expect(hash.keys.join).to eql('spec/linter_spec.rb')
+    end
+  end
 end
