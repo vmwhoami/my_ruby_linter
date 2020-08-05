@@ -27,7 +27,3 @@ class FileHandler
   end
 end
 
-# load "./lib/file_handler.rb"
-# files = FileHandler.new
-# p files.file_count
-# 9 files inspected, 5 offenses detected

@@ -78,12 +78,7 @@ rspec
 ```
 But before testing using RSpec you can install the gem file by running the command
 ```
-$ bundle install 
-```
-Also make sure you have bundler installed on your system, else run
-```
-$ gem install bundler 
-```
+
 or you simply install the the following directly using
 ```
 $ gem install rspec 

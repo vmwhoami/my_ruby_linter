@@ -39,3 +39,7 @@ describe Linternator do
     end
   end
 end
+
+describe FileHandler do
+  
+end

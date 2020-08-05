@@ -4,16 +4,10 @@ class Linternator
   attr_reader :file, :file_name, :code_lines, :allerrors, :file_count
   def initialize(folder)
     @folders = FileHandler.new(folder)
-    # @file = @folders.file_query
-    # @file_name = @file.keys.flatten.join
-    # @code_lines =  @file.values.flatten
     @file_count = @folders.file_count
     @keywords = %w[def if unless until class case begin]
     @allerrors = []
     all_files
-    # self.braces_handler
-    # self.incorect_end_handler
-    # self.all_files
   end
 
   def all_files
@@ -21,7 +15,7 @@ class Linternator
       @file = @folders.file_query
       @file_name = @file.keys.flatten.join
       @code_lines = @file.values.flatten
-      incorect_end_handler
+      incorrect_end_handler
       braces_handler
     end
   end
@@ -33,11 +27,11 @@ class Linternator
   def braces_handler
     message = 'missing closing brackets'
     @code_lines.each_with_index do |line, indx|
-      upadate_errors(@file_name.blue + ": on Line #{indx + 1} ".yellow + message.red) if incorect_braces?(line)
+      upadate_errors(@file_name.blue + ": on Line #{indx + 1} ".yellow + message.red) if incorrect_braces?(line)
     end
   end
 
-  def incorect_braces?(str)
+  def incorrect_braces?(str)
     array = []
     braces = { '{' => '}', '[' => ']', '(' => ')' }
     str.each_char do |char|
@@ -47,7 +41,7 @@ class Linternator
     !array.empty?
   end
 
-  def incorect_end_handler
+  def incorrect_end_handler
     message_a = 'Extra end detected'
     message_b = 'Missing end'
 
@@ -80,10 +74,4 @@ class Linternator
   end
 end
 
-# load "./lib/linternator.rb"
 
-linter = Linternator.new('second')
-# # puts linter.braces_handler
-# # puts linter.incorect_end_handler
-
-p linter.allerrors
