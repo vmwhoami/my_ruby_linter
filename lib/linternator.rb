@@ -10,25 +10,18 @@ class Linternator
     all_files
   end
 
-  def all_files
-    until @folders.file_count.zero?
-      @file = @folders.file_query
-      @file_name = @file.keys.flatten.join
-      @code_lines = @file.values.flatten
-      incorrect_end_handler
-      braces_handler
-    end
-  end
-
   def upadate_errors(error)
     @allerrors << error
   end
 
-  def braces_handler
-    message = 'missing closing brackets'
-    @code_lines.each_with_index do |line, indx|
-      upadate_errors(@file_name.blue + ": on Line #{indx + 1} ".yellow + message.red) if incorrect_braces?(line)
+  def errors_spitter
+    puts "#{@folders.initial_count} files read #{@allerrors.size} errors found".green if @allerrors.empty?
+    @allerrors.each do |el|
+      puts
+      puts el
+      puts
     end
+    puts "#{@folders.initial_count} files read #{@allerrors.size} errors found".red unless @allerrors.empty?
   end
 
   def incorrect_braces?(str)
@@ -39,6 +32,25 @@ class Linternator
       return true if braces.key(char) && braces.key(char) != array.pop
     end
     !array.empty?
+  end
+
+  private
+
+  def braces_handler
+    message = 'missing closing brackets'
+    @code_lines.each_with_index do |line, indx|
+      upadate_errors(@file_name.blue + ": on Line #{indx + 1} ".yellow + message.red) if incorrect_braces?(line)
+    end
+  end
+
+  def all_files
+    until @folders.file_count.zero?
+      @file = @folders.file_query
+      @file_name = @file.keys.flatten.join
+      @code_lines = @file.values.flatten
+      incorrect_end_handler
+      braces_handler
+    end
   end
 
   def incorrect_end_handler
@@ -61,15 +73,5 @@ class Linternator
     ends_meet = keyword_count <=> end_count
     upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_b.red) if ends_meet.eql?(1)
     upadate_errors(@file_name.blue + ": Line #{index_end[-1]} ".yellow + message_a.red) if ends_meet.eql?(-1)
-  end
-
-  def errors_spitter
-    puts "#{@folders.initial_count} files read #{@allerrors.size} errors found".green if @allerrors.empty?
-    @allerrors.each do |el|
-      puts
-      puts el
-      puts
-    end
-    puts "#{@folders.initial_count} files read #{@allerrors.size} errors found".red unless @allerrors.empty?
   end
 end
